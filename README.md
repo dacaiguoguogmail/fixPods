@@ -1,5 +1,6 @@
 # fixPods
-fix some bug in cocoapods
+fix some bug in cocoapods.
+like:
 
 1.fix cocoapods podfile.lock strange quotation marks
 ```
