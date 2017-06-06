@@ -25,8 +25,11 @@ if [ $? -eq 0 ];then
 fi
 if [[ $poddir = "/Library/Ruby/Gems/2.0.0" ]]; then
     sudo curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/CocoaPods/master/lib/cocoapods/command/ipc/podfile_json.rb -O
+    cd "$poddir"/gems/cocoapods-1.1.1/lib/cocoapods/command/
+    sudo curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/CocoaPods/master/lib/cocoapods/command/ipc.rb -O
 else
     curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/CocoaPods/master/lib/cocoapods/command/ipc/podfile_json.rb -O
+    curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/CocoaPods/master/lib/cocoapods/command/ipc.rb -O
 fi
 echo "podfile_json.rb did add"
 echo "fix success"
