@@ -8,6 +8,7 @@ sudo curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/CocoaPods/mas
 echo "$poddir"/gems/cocoapods-1.1.1/lib/cocoapods/command/ipc/podfile_json.rb
 sudo curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/CocoaPods/master/lib/cocoapods/command/ipc.rb -o "$poddir"/gems/cocoapods-1.1.1/lib/cocoapods/command/ipc.rb
 echo "$poddir"/gems/cocoapods-1.1.1/lib/cocoapods/command/ipc.rb
+echo -e "\033[32mfix success\033[0m"
 exit 0
 fi
 curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/Core/master/lib/cocoapods-core/lockfile.rb -o "$poddir"/gems/cocoapods-core-1.1.1/lib/cocoapods-core/lockfile.rb
@@ -16,4 +17,4 @@ curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/CocoaPods/master/l
 echo "$poddir"/gems/cocoapods-1.1.1/lib/cocoapods/command/ipc/podfile_json.rb
 curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/CocoaPods/master/lib/cocoapods/command/ipc.rb -o "$poddir"/gems/cocoapods-1.1.1/lib/cocoapods/command/ipc.rb
 echo "$poddir"/gems/cocoapods-1.1.1/lib/cocoapods/command/ipc.rb
-echo "fix success"
+echo -e "\033[32mfix success\033[0m"
