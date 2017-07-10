@@ -16,6 +16,7 @@ echo $uuid_gen_path
 exit 0
 fi
 gem install xcodeproj -v 1.5.0
+uuid_gen_path=$(echo `gem env gemdir`/gems/xcodeproj-`xcodeproj --version `/lib/xcodeproj/project/uuid_generator.rb)
 curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/Core/master/lib/cocoapods-core/lockfile.rb -o "$poddir"/gems/cocoapods-core-1.1.1/lib/cocoapods-core/lockfile.rb
 echo "$poddir"/gems/cocoapods-core-1.1.1/lib/cocoapods-core/lockfile.rb
 curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/CocoaPods/master/lib/cocoapods/command/ipc/podfile_json.rb -o "$poddir"/gems/cocoapods-1.1.1/lib/cocoapods/command/ipc/podfile_json.rb
