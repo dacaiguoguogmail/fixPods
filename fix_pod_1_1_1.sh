@@ -2,8 +2,12 @@
 
 poddir=$(echo `gem env gemdir`)
 if [[ $poddir = "/Library/Ruby/Gems/2.0.0" ]]; then
-sudo gem install xcodeproj -v 1.5.0
-uuid_gen_path=$(echo `gem env gemdir`/gems/xcodeproj-`xcodeproj --version `/lib/xcodeproj/project/uuid_generator.rb)
+if [[ `xcodeproj --version` = "1.5.0" ]]; then
+    echo 'xcodeproj -v 1.5.0'
+else
+    sudo gem install xcodeproj -v 1.5.0
+fi
+uuid_gen_path=$(echo `gem env gemdir`/gems/xcodeproj-`xcodeproj --version`/lib/xcodeproj/project/uuid_generator.rb)
 sudo curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/Core/master/lib/cocoapods-core/lockfile.rb -o "$poddir"/gems/cocoapods-core-1.1.1/lib/cocoapods-core/lockfile.rb
 echo "$poddir"/gems/cocoapods-core-1.1.1/lib/cocoapods-core/lockfile.rb
 sudo curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/CocoaPods/master/lib/cocoapods/command/ipc/podfile_json.rb -o "$poddir"/gems/cocoapods-1.1.1/lib/cocoapods/command/ipc/podfile_json.rb
@@ -15,7 +19,11 @@ sudo curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/fixPods/maste
 echo $uuid_gen_path
 exit 0
 fi
-gem install xcodeproj -v 1.5.0
+if [[ `xcodeproj --version` = "1.5.0" ]]; then
+    echo 'xcodeproj -v 1.5.0'
+else
+    gem install xcodeproj -v 1.5.0
+fi
 uuid_gen_path=$(echo `gem env gemdir`/gems/xcodeproj-`xcodeproj --version `/lib/xcodeproj/project/uuid_generator.rb)
 curl -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/Core/master/lib/cocoapods-core/lockfile.rb -o "$poddir"/gems/cocoapods-core-1.1.1/lib/cocoapods-core/lockfile.rb
 echo "$poddir"/gems/cocoapods-core-1.1.1/lib/cocoapods-core/lockfile.rb
