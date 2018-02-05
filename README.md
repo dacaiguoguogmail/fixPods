@@ -2,11 +2,14 @@
 fix some bug in cocoapods.
 like:
 
-1.fix cocoapods podfile.lock strange quotation marks
+1.添加保持文件夹结构功能
 ```
-curl -o- -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/fixPods/master/fix_pod_1_1_1.sh | zsh
+curl -o- -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/fixPods/master/fix_pod_1_3_1.sh | zsh
 ```
-2.revert fix cocoapods podfile.lock strange quotation marks
+
+Podfile里添加`#keep_folder_structure`就会保持文件夹结构
+
+2.恢复
 ```
-curl -o- -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/fixPods/master/fix_pod_1_1_1_revert.sh | zsh
+curl -o- -fsSL https://raw.githubusercontent.com/dacaiguoguogmail/fixPods/master/fix_pod_1_3_1_revert.sh | zsh
 ```
